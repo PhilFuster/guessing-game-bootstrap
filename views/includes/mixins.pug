@@ -16,3 +16,7 @@ mixin game-data-tile(game)
         p.card-text #{game.secretNumber}
       .card-title Game Length
         p.card-text #{game.guesses.length}
+mixin guess-button()
+  div(class="d-flex justify-content-center")
+    button.circle
+      span(class="question-mark") &#63        
