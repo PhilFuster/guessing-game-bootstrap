@@ -8,9 +8,10 @@ $(document).ready(function () {
     $('#game_detail').toggleClass('d-none');
     $('#history').hide();
     $('table').show();
+    $('#history_tiles_wrapper').toggleClass('d-lg-block');
   }
 
-  $('tbody > tr').on('click', async function () {
+  $('tbody > tr, #history_tiles > .card').on('click', async function () {
     const id = $(this).data('objectid');
     let response;
     try {
@@ -38,6 +39,7 @@ $(document).ready(function () {
             .appendTo('#guesses');
         });
         $('table').hide();
+        $('#history_tiles_wrapper').toggleClass('d-lg-block');
         $('#game_detail').toggleClass('d-none');
         $('#history').show();
       } catch (error) {

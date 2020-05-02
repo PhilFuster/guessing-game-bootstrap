@@ -16,7 +16,7 @@ block content
   main(role="main")
     .container-fluid
       h1.text-center.page-title Game History
-      table#history_table(class="table table-striped")
+      table#history_table(class="table table-striped d-lg-none")
         caption PAF Guessing Game History
         thead.thead-dark.text-center
           th(scope="col") Date
@@ -27,17 +27,10 @@ block content
             td#index #{game.timeStamp}
             td #{game.secretNumber}
             td #{game.guesses.length}
-      #history_tiles
-        .history_headers
-          ul
-            li Date
-            li Secret Number
-            li Guesses
-        each game, index in history
-          ul
-            li #{game.timeStamp}
-            li #{game.secretNumber}
-            li #{game.guesses.length}
+      #history_tiles_wrapper.d-none.d-lg-block.container-fluid
+        #history_tiles.row.row-cols-lg-4.row-cols-xl-5
+          each game, index in history
+            +game-data-tile(game)
       #game_detail(class="d-none container")
         div(class="gameDetailContent d-flex flex-column align-items-center")
           h2.text-center Game Detail

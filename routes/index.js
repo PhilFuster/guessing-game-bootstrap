@@ -26,7 +26,8 @@ const { views, routes, title } = appdata;
  */
 function init(req) {
   const secretNumber = Math.floor(Math.random() * 10 + 1);
-  const now = dateformat();
+  const date = dateformat();
+  const now = dateformat(date, 'mmm dd yyyy HH:MM:ss');
   const id = ObjectID();
   //
   req.session.secretNumber = secretNumber;
