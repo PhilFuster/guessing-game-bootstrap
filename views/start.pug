@@ -1,0 +1,32 @@
+extends ./layouts/main-layout.pug
+block head-link-list
+  +head-links([
+    {rel:'stylesheet', href: '/stylesheets/css/guess.css'}
+    ])
+block nav-link-list
+  +nav-links([
+    {path: '/', desc: 'Home'},
+    {path: '/history', desc: 'History'}
+  ])
+block content  
+  main(role="main")
+    .container
+      h1.page-title Guess
+      form(id="guess-form" action="/guess" method="post")
+        .form-group
+          input(
+            type="number"
+            id="guess"
+            name="guess"
+            class="form-control"
+            aria-describedby= "guessHelp"
+            autocomplete="off"
+            required
+            placeholder="Your Guess"
+            )
+          small#guessHelp(class="form-text text-muted").
+            The server is thinking of a number between 1 and 10
+          div(class="d-flex justify-content-center")
+            button.circle
+              span(class="question-mark") &#63
+            

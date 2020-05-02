@@ -1,0 +1,20 @@
+@import 'main.less';
+#guesses {
+  list-style: none;
+}
+tbody > tr {
+  cursor: pointer;
+}
+
+#history_tiles {
+  display: none;
+}
+
+@media (min-width: 1000px) {
+  #history_table {
+    display: none;
+  }
+  #history_tiles {
+    display: grid;
+  }
+}
