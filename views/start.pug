@@ -12,6 +12,11 @@ block content
   main(role="main")
     .container
       h1.page-title Guess
+      .instructions-wrapper.d-none.d-md-block
+        h2.instructions.text-center
+          | The server is thinking of a number between 1 and 10.
+          br
+          | Can you guess it??
       form(id="guess-form" action="/guess" method="post")
         .form-group
           input(
@@ -24,7 +29,7 @@ block content
             required
             placeholder="Your Guess"
             )
-          small#guessHelp(class="form-text text-muted").
+          small#guessHelp(class="form-text text-muted d-md-none").
             The server is thinking of a number between 1 and 10
           div(class="d-flex justify-content-center")
             button.circle
